@@ -28,9 +28,9 @@
     param
         (
         [Parameter(Mandatory=$False)]
-            [string]$SiteServer="FRMSFICFMVP001",
+            [string]$SiteServer="***",
         [Parameter(Mandatory=$False)]
-            [string]$SiteCode="FRM"
+            [string]$SiteCode="***"
         )
  
 function Get-CMErrorMessage {
