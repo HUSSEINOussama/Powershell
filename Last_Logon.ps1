@@ -9,7 +9,7 @@ V1.0
 #>
 
 $Date=(get-date -format "dd.MM.yyyy")
-$WorkDir= 'C:\expl\Pending Reboot\'
+$WorkDir= '***'
 CLS
 $ErrorActionPreference = "SilentlyContinue"
 
@@ -82,10 +82,10 @@ $anonPassword = ConvertTo-SecureString -String "anonymous" -AsPlainText -Force
 $anonCredentials = New-Object System.Management.Automation.PSCredential($anonUsername,$anonPassword)
 
      # Paramètres du mail
-$smtp = "smtpmal.fr.sonepar.net" 
-$to = "Oussama HUSSEIN <oussama.hussein@sonepar.fr>" 
-#$cc = "Thierry Geffroy <thierry.geffroy@sonepar.fr>"
-$from = "Last_Logon <Last_Logon@sonepar.fr>" 
+$smtp = "***" 
+$to = "***" 
+#$cc = "***"
+$from = "Last_Logon" 
 $subject = "Dernier utilisateur connecté."  
 $body += "Bonjour,<br><br>"
 $body += ""
