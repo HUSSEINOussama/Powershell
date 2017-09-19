@@ -3,15 +3,15 @@ Ce script liste l'ensemble des VM sur nos vCenter.
 Le fichier de sortie est Liste_VM_$Date.csv.
 Un fichier Log est disponible : Log_Liste_VM_$Date.txt.
 
-Crée par Oussama HUSSEIN
+CrÃ©e par Oussama HUSSEIN
 V1.0
 28/07/2015
 #>
 
 $Date=(get-date -format "dd.MM.yyyy")
-$WorkDir= "C:\expl\Pending Reboot\"
+$WorkDir= "***"
 
-# Si le fichier Logs existe, le déplace vers le dossier Archives
+# Si le fichier Logs existe, le dÃ©place vers le dossier Archives
 if (Test-Path -path "$WorkDir\Logs\Log_Liste_VM_$Date.txt")
 {
 Write-host "Fichier Last_Pending_Reboot_$Date.csv deja present - J'ecrase l'archive du jour"
@@ -22,7 +22,7 @@ else
 Write-host "Creation d'une nouvelle liste."
 }
 
-# Si la liste existe deja, déplace l'ancienne dans le dossier Archives
+# Si la liste existe deja, dÃ©place l'ancienne dans le dossier Archives
 if (Test-Path -path "$WorkDir\Liste_VM\Liste_VM_$Date.csv")
 {
 Write-host "Fichier Liste_VM_$Date.txt deja present - J'ecrase l'archive du jour"
@@ -44,9 +44,9 @@ $ERRORACTIONpreference="silentlycontinue"
 ADD-PSSnapin VMware.VimAutomation.Core -erroraction silentlycontinue
 Set-PowerCLIConfiguration -invalidCertificateAction "ignore" -confirm:$false
 
-# Connexion au vCenter et aux vCenter associés
-$vCenter_MAL = "FRMSFIVCMVP002.fr.sonepar.net"
-Connect-VIServer $vCenter_MAL -AllLinked
+# Connexion au vCenter et aux vCenter associÃ©s
+$vCenter = "***"
+Connect-VIServer $vCenter -AllLinked
 
 # Liste les VM dans un fichier CSV
 $VM= Get-VM * | Where-Object {$_.Powerstate -eq 'PoweredOn'} | SELECT Name | Export-Csv -NoTypeInformation -path "$WorkDir\Liste_VM\Liste_VM_$Date.csv" -Delimiter ';'
@@ -57,16 +57,16 @@ $anonUsername = "anonymous"
 $anonPassword = ConvertTo-SecureString -String "anonymous" -AsPlainText -Force
 $anonCredentials = New-Object System.Management.Automation.PSCredential($anonUsername,$anonPassword)
 
-     # Paramètres du mail
-$smtp = "smtpmal.fr.sonepar.net" 
-$to = "Oussama HUSSEIN <oussama.hussein@sonepar.fr>" 
-#$cc = "Thierry Geffroy <thierry.geffroy@sonepar.fr>"
-$from = "Liste_VM <Liste_VM@sonepar.fr>" 
+     # ParamÃ¨tres du mail
+$smtp = "***" 
+$to = "***" 
+#$cc = "***"
+$from = "***" 
 $subject = "Liste des VM."  
 $body += "Bonjour,<br><br>"
 $body += ""
-$body += "En pièce jointe, la liste des VM au $Date.<br><br>"
-$body += "Bonne réception.<br><br>" 
+$body += "En piÃ¨ce jointe, la liste des VM au $Date.<br><br>"
+$body += "Bonne rÃ©ception.<br><br>" 
 $body += "Cordialement.<br><br>"
 $body += "Liste_VM."
     
