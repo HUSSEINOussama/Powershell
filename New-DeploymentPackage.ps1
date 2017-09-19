@@ -1,6 +1,6 @@
 
-#Déclaration des variables communes
-$UpdateGroupName = "MaJ Critiques $NameDate test oussama"
+#DÃ©claration des variables communes
+$UpdateGroupName = "MaJ Critiques $NameDate"
 $Time = "LocalTime"
 
 #Obtention de la date
@@ -17,9 +17,9 @@ $NameDate = (Get-Date -Format "yyyy-MM")
     Set-Location "$($PSD):"
 
 Try 
-    {    #Création des packages de déploiement
+    {    #CrÃ©ation des packages de dÃ©ploiement
     
-            #Package Pool créée
+            #Package Pool crÃ©Ã©e
             
    
    #Start-CMSoftwareUpdateDeployment -SoftwareUpdateGroupName $UpdateGroupName -CollectionName "test application 2016 avant prod" -DeploymentName "$UpdateGroupName test oussama" -DeploymentType "Available" -VerbosityLevel OnlyErrorMessages -TimeBasedOn $Time -DeploymentAvailableDay ($Date.ToShortDateString()) -UserNotification DisplayAll -UseBranchCache $true         
@@ -35,9 +35,9 @@ Try
             
     Start-CMSoftwareUpdateDeployment -SoftwareUpdateGroupName $UpdateGroupName -CollectionName "SYSTEM_STAT_WSUS_POOL TEST" -DeploymentName "$UpdateGroupName Pool Test" -DeploymentType "Required" -VerbosityLevel OnlyErrorMessages -TimeBasedOn $Time -DeploymentAvailableDay (($Date.AddDays(7)).ToShortDateString()) -UserNotification HideAll -DeploymentExpireDay (($Date.AddDays(14)).ToShortDateString()) -UseBranchCache $true
     
-            #Package Pool Pré-Test
+            #Package Pool PrÃ©-Test
             
-    Start-CMSoftwareUpdateDeployment -SoftwareUpdateGroupName $UpdateGroupName -CollectionName "SYSTEM_STAT_WSUS_POOL PRE-TEST" -DeploymentName "$UpdateGroupName Pool Pré Test" -DeploymentType "Required" -VerbosityLevel OnlyErrorMessages -TimeBasedOn $Time -DeploymentAvailableDay ($Date.ToShortDateString()) -UserNotification HideAll -DeploymentExpireDay (($Date.AddDays(7)).ToShortDateString()) -UseBranchCache $true
+    Start-CMSoftwareUpdateDeployment -SoftwareUpdateGroupName $UpdateGroupName -CollectionName "SYSTEM_STAT_WSUS_POOL PRE-TEST" -DeploymentName "$UpdateGroupName Pool PrÃ© Test" -DeploymentType "Required" -VerbosityLevel OnlyErrorMessages -TimeBasedOn $Time -DeploymentAvailableDay ($Date.ToShortDateString()) -UserNotification HideAll -DeploymentExpireDay (($Date.AddDays(7)).ToShortDateString()) -UseBranchCache $true
     
     } 
 
@@ -46,6 +46,6 @@ Catch
     {
             #Si erreur, Affichage du message d'erreur
             
-    Write-Host "$($_.Exception.Message) Merci de bien vouloir vérifier que vous avez entré le bon nom de Groupe de Mises à Jour Logicielles et fourni une Collection qui existe."
+    Write-Host "$($_.Exception.Message) Merci de bien vouloir vÃ©rifier que vous avez entrÃ© le bon nom de Groupe de Mises Ã  Jour Logicielles et fourni une Collection qui existe."
 
     }
