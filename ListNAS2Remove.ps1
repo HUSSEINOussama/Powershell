@@ -25,23 +25,23 @@ Param(
 Import-Module ActiveDirectory
 # Variables
 $SourceDir = 
-$LogsDir = "C:\expl\Purge_HumeUsers_fromNAS\Logs"
-$ListesDir = "C:\expl\Purge_HumeUsers_fromNAS\Listes"
-$MovedDir = "C:\expl\Purge_HumeUsers_fromNAS\Deplaces"
-$Serveur = "frmsfidcopp001.fr.sonepar.net"
+$LogsDir = "***"
+$ListesDir = "***"
+$MovedDir = "***"
+$Serveur = "***"
 clear
 $Date = (Get-Date -Format "ddMMyyyyHHmm")
 if ($Logs){Start-Transcript "$LogsDir\ListNAS2Remove.$Date.txt"}
 Write-Host "Quel NAS analyser?"
-Write-Host "[1]- \\sonpnaspp001.fr.sonepar.net\Users"
-Write-Host "[2]- \\ccfpnaspp001.fr.sonepar.net\Users"
-Write-Host "[3]- \\snemnaspp001.fr.sonepar.net\Users"
-Write-Host "[4]- \\ssemnaspp001.fr.sonepar.net\Users"
-Write-Host "[5]- \\agppnaspp001.fr.sonepar.net\Users"
-Write-Host "[6]- \\sifmnas01.fr.sonepar.net\Users"
-Write-Host "[7]- \\satpnaspp002.fr.sonepar.net\Users"
-Write-Host "[8]- \\cgepnaspp001.fr.sonepar.net\Users"
-Write-Host "[9]- \\satpnaspp001.sa.fr\Users$"
+Write-Host "[1]- ***"
+Write-Host "[2]- ***"
+Write-Host "[3]- ***"
+Write-Host "[4]- ***"
+Write-Host "[5]- ***"
+Write-Host "[6]- ***"
+Write-Host "[7]- ***"
+Write-Host "[8]- ***"
+Write-Host "[9]- ***"
 Write-Host "[10]- Tous (sauf [9])"
 Write-Host "[11]- Deplacer les repertoires à partir d`'un fichier."
 $Choix = Read-Host "Choisissez une option : 1 - 11 "
@@ -51,45 +51,44 @@ $ErrorActionPreference="silentlycontinue"
 clear
 
 Switch ($Choix)
-    {1 {$SourceShare= "\\sonpnaspp001.fr.sonepar.net\Users"
+    {1 {$SourceShare= "***"
           $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     2 {$SourceShare = "\\ccfpnaspp001.fr.sonepar.net\Users"
+     2 {$SourceShare = "***"
           $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     3 {$SourceShare= "\\snemnaspp001.fr.sonepar.net\Users"
+     3 {$SourceShare= "***"
           $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     4 {$SourceShare= "\\ssemnaspp001.fr.sonepar.net\Users"
+     4 {$SourceShare= "***"
           $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     5 {$SourceShare= "\\agppnaspp001.fr.sonepar.net\Users"
+     5 {$SourceShare= "***"
          $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
          }
-     6 {$SourceShare= "\\sifmnas01.fr.sonepar.net\Users"
+     6 {$SourceShare= "***"
           $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     7 {$SourceShare= "\\satpnaspp002.fr.sonepar.net\Users"
+     7 {$SourceShare= "***"
           $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     8 {$SourceShare= "\\cgepnaspp001.fr.sonepar.net\Users"
+     8 {$SourceShare= "***"
           $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     9 {$SourceShare= "\\satpnaspp001.sa.fr\Users$"
+     9 {$SourceShare= "***"
           $DestShare = "$SourceShare\_old"
-          $Serveur = "srvcsodc01.sa.fr"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
-     10{$SourceShare = "\\sonpnaspp001.fr.sonepar.net\Users","\\ccfpnaspp001.fr.sonepar.net\Users","\\snemnaspp001.fr.sonepar.net\Users","\\ssemnaspp001.fr.sonepar.net\Users","\\agppnaspp001.fr.sonepar.net\Users","\\sifmnas001.fr.sonepar.net\Users","\\satpnaspp002.fr.sonepar.net\Users","\\cgepnaspp001.fr.sonepar.net\Users"
-          $DestShare = "$vFilers\_old"
+     10{$SourceShare = "***"
+          $DestShare = "$SourceShare\_old"
           Write-Verbose "L analyse a ete lancee sur $SourceShare."
           }
      11{Write-Verbose "Vous avez choisi de deplacer des dossiers directement à partir d une liste"
@@ -119,8 +118,6 @@ Foreach ($vFilers in $SourceShare){
 Write-Verbose "Analyse de $vFilers lancee."
 $Count = 0
 $Nbre = 0
-$Nom = ("$vFilers".replace(".fr.sonepar.net\Users",""))
-$Nom1 = ("$Nom".replace(".sa.fr\Users$",""))
 clear
 Write-Host "`n`n`n`n`n`n`n`n`nScript d`'inventaire des repertoires Users a supprimer.`n" -ForegroundColor "Green"
 Write-Host "Traitement du vFiler $vFilers.`n##########################################################################################`n"
