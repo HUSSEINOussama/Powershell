@@ -1,0 +1,1 @@
+Add-PSSnapin Quest.ActiveRoles.ADManagement

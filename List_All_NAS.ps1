@@ -1,0 +1,10 @@
+./List_homedir2Remove.ps1 -vfiler sifmnas01
+./List_homedir2Remove.ps1 -vfiler cgepnaspp001
+./List_homedir2Remove.ps1 -vfiler ccfpnaspp001
+#./List_homedir2Remove.ps1 -vfiler sanpnaspp001
+#./List_homedir2Remove.ps1 -vfiler satpnaspp001
+./List_homedir2Remove.ps1 -vfiler satpnaspp002
+./List_homedir2Remove.ps1 -vfiler snemnaspp001
+./List_homedir2Remove.ps1 -vfiler sonpnaspp001
+./List_homedir2Remove.ps1 -vfiler ssemnaspp001
+./List_homedir2Remove.ps1 -vfiler agppnaspp001
