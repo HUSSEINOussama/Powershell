@@ -166,14 +166,14 @@ stop-Transcript
 
 # Envoi des fichiers par mail
         # Credential anonyme pour l'envoi
-    $anonUsername = "anonymous"
-    $anonPassword = ConvertTo-SecureString -String "anonymous" -AsPlainText -Force
+    $anonUsername = ""
+    $anonPassword = ConvertTo-SecureString -String "" -AsPlainText -Force
     $anonCredentials = New-Object System.Management.Automation.PSCredential($anonUsername,$anonPassword)
 
         # Paramètres du mail
-    $smtp = "smtpmal.fr.sonepar.net" 
-    $to = "Oussama HUSSEIN <oussama.hussein@sonepar.fr>"
-    $from = "Server_Reboot <LP_Reboot@sonepar.fr>" 
+    $smtp = "" 
+    $to = ""
+    $from = "" 
     $subject = "Dernier redémarrage et attente de redemarrage."  
     $body += "Bonjour,<br><br>"
     $body += ""
