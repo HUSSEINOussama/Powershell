@@ -3,8 +3,8 @@ Start-Transcript "$WorkDir\Logs\Last_Reboot_Log.txt"
 $Date=(get-date -format "dd.MM.yyyy.HH")
 ADD-PSSnapin VMware.VimAutomation.Core -erroraction silentlycontinue
 Set-PowerCLIConfiguration -invalidCertificateAction "ignore" -confirm:$false
-$vCenter_MAL = "FRMSFIVCMVP002.fr.sonepar.net"
-$vCenter_PAL = "FRPSFOVCMVP002.fr.sonepar.net"
+$vCenter_MAL = ""
+$vCenter_PAL = ""
 Connect-VIServer $vCenter_MAL -AllLinked
 $ErrorLog = "$WorkDir\Logs\Log_Last_Reboot_$Date.txt"
     cls
